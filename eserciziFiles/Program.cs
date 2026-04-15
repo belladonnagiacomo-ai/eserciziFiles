@@ -4,7 +4,23 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            string cartella = "Configurazione";
+            string nomeFile = "impostazioni.log";
+
+            if (!Directory.Exists(cartella))
+            {
+                Directory.CreateDirectory(cartella);
+            }
+
+            string path = Path.Combine(cartella, nomeFile);
+
+            if (!Directory.Exists(path))
+            {
+                File.Delete(path);
+                Directory.CreateDirectory(path);
+            }
+
+
         }
     }
 }
